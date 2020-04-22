@@ -38,7 +38,7 @@ void time(){
   	time_t t = time(NULL);
   	struct tm tm = *localtime(&t);
  
-   printf("\n\n\t\t\t\t\t\t\tÇöÀç ½Ã°£ : %d-%d-%d %d:%d:%d\n",
+   printf("\n\n\t\t\t\t\t\t\tí˜„ì¬ ì‹œê°„ : %d-%d-%d %d:%d:%d\n",
          tm.tm_year+1900, tm.tm_mon+1, tm.tm_mday,
          tm.tm_hour, tm.tm_min, tm.tm_sec);
  
@@ -53,10 +53,10 @@ void load(){
 	FILE *fp2 =NULL; 
 	fp2=fopen("sales.txt", "r");
 	fscanf(fp2,"%s %s %s %s %s", &Name, &Year, &Month, &Date, &Sales);
-	printf("Store name : %s   Y/M/D : %s   ¸ÅÃâ : %s\n",
+	printf("Store name : %s   Y/M/D : %s   ë§¤ì¶œ : %s\n",
 	Name, Year, Month, Date, Sales );
 }
-// 1. ¸ÅÃâÀÔ·ÂÄ­ 2.¼øÀÍ°è»êÄ­ 3. ¿ùº°¸ŞÃâºñ±³ 4. ¿ùº°¼øÀÍºñ±³
+// 1. ë§¤ì¶œì…ë ¥ì¹¸ 2.ìˆœìµê³„ì‚°ì¹¸ 3. ì›”ë³„ë©”ì¶œë¹„êµ 4. ì›”ë³„ìˆœìµë¹„êµ
 int main(){
 	
 	do{	
@@ -66,16 +66,16 @@ int main(){
 		blue();
 		printf("\n\t\t\tWelcome to Account Book Program\n\n");
 		purple();
-		printf("***ÀÚ¿µ¾÷ÀÚµéÀ» À§ÇÑ °¡°èºÎ ÇÁ·Î±×·¥\n");
-		printf("***¸ÅÃâ°ú ¼øÀÍ °ü¸® ÇÁ·Î±×·¥\n\n");
+		printf("***ìì˜ì—…ìë“¤ì„ ìœ„í•œ ê°€ê³„ë¶€ í”„ë¡œê·¸ë¨\n");
+		printf("***ë§¤ì¶œê³¼ ìˆœìµ ê´€ë¦¬ í”„ë¡œê·¸ë¨\n\n");
 		yellow();
 		printf("\t\t\t\t***MAIN MENU***\n\n");
 		printf("\t\t===================================================\n\n");
-		printf("\t\t\t[1] ¸ÅÃâÀÔ·Â\n\n");		
-		printf("\t\t\t[2] ¼øÀÍ°è»ê\n\n");
-		printf("\t\t\t[3] ¿ùº°¸ÅÃâºñ±³\n\n");
-		printf("\t\t\t[4] ¿ùº°¼øÀÍºñ±³\n\n");
-		printf("\t\t\t[5] Á¾·á\n\n");
+		printf("\t\t\t[1] ë§¤ì¶œì…ë ¥\n\n");		
+		printf("\t\t\t[2] ìˆœìµê³„ì‚°\n\n");
+		printf("\t\t\t[3] ì›”ë³„ë§¤ì¶œë¹„êµ\n\n");
+		printf("\t\t\t[4] ì›”ë³„ìˆœìµë¹„êµ\n\n");
+		printf("\t\t\t[5] ì¢…ë£Œ\n\n");
 		printf("\t\t===================================================\n");
 		green();
 		printf("\t\t\t\t\tMade By dongik9 & Choi-gunwoo\n\n");
@@ -84,14 +84,14 @@ int main(){
 		scanf("%d", &menu_num); 
 		
 	
-		system( "cls" ); //È­¸é Áö¿ì±â 
+		system( "cls" ); //í™”ë©´ ì§€ìš°ê¸° 
 		switch (menu_num){
 			//-------------[1]-------------
-			case 1: //¸ÅÃâÀÔ·Â 
+			case 1: //ë§¤ì¶œì…ë ¥ 
 				yellow();
 				time();
 				blue();
-				printf("\n\t\t****¸ÅÃâÀÔ·Â****\n\n");
+				printf("\n\t\t****ë§¤ì¶œì…ë ¥****\n\n");
 				white();
 				printf("Store Name : ");
 				scanf("%s", &Name);
@@ -101,18 +101,18 @@ int main(){
 				scanf("%s", &Month);
 				printf("Date : ");
 				scanf("%s", &Date);
-				printf("¸ÅÃâ : ");
+				printf("ë§¤ì¶œ : ");
     			scanf("%s", &Sales);
 				save();
 				printf("\nEnter the number : ");
 				scanf("%d", &check);
                 break;
 			//-------------[2]-------------	
-			case 2:{ //¼øÀÍ°è»ê 
+			case 2:{ //ìˆœìµê³„ì‚° 
 				yellow();
 				time();
 				blue();
-				printf("\n\t\t****¼øÀÍ°è»ê****\n\n"); 
+				printf("\n\t\t****ìˆœìµê³„ì‚°****\n\n"); 
 				white();
 				
 				printf("Year : ");
@@ -121,25 +121,32 @@ int main(){
 				scanf("%s", &Month);
 				
 				for(int i=0; i<4; i++){
-					printf("%dÁÖÂ÷ ¸ÅÃâÀ» ÀÔ·ÂÇÏ¼¼¿ä : ", i+1);
+					printf("%dì£¼ì°¨ ë§¤ì¶œì„ ì…ë ¥í•˜ì„¸ìš” : ", i+1);
 					scanf("%d", &weeksale[i]);
 					sum += weeksale[i];
 				}
-				printf("ÀÌ¹ø´Ş ÃÑ¸ÅÃâÀº %d¿ø\n", sum);
+				printf("ì´ë²ˆë‹¬ ì´ë§¤ì¶œì€ %dì›\n", sum);
+				char temp1[100];
+				itoa(sum, temp1, 10); // ì •ìˆ˜ë¥¼ ë¬¸ìì—´ë¡œ ë³€í™˜
 				
-				printf("ÀÌ¹ø´Ş ÀÎ°Çºñ : ");
+				FILE *fp3 = NULL;	        
+				fp3=fopen("totalsales.txt","a");
+				fprintf(fp3,"%së…„ %sì›” %sì›\n", &Year, &Month, &temp1);			
+				fclose(fp3); 
+				
+				printf("ì´ë²ˆë‹¬ ì¸ê±´ë¹„ : ");
 				scanf("%d", &labor);
 				
 				profit = sum - labor;
-				printf("ÀÌ¹ø´Ş ¼ø¼öÀÍÀº %d¿ø\n", profit);
+				printf("ì´ë²ˆë‹¬ ìˆœìˆ˜ìµì€ %dì›\n", profit);
 				
-				char temp[100];
-				itoa(profit, temp, 10); // Á¤¼ö¸¦ ¹®ÀÚ¿­·Î º¯È¯ 
+				char temp2[100];
+				itoa(profit, temp2, 10); // ì •ìˆ˜ë¥¼ ë¬¸ìì—´ë¡œ ë³€í™˜ 
 				
-				FILE *fp3 =NULL;	        
+				FILE *fp4 =NULL;	        
 				fp3=fopen("profit.txt","a");
-				fprintf(fp3,"%s³â %s¿ù %s¿ø\n", &Year, &Month, &temp);			
-				fclose(fp3); 
+				fprintf(fp4,"%së…„ %sì›” %sì›\n", &Year, &Month, &temp2);			
+				fclose(fp4); 
 				
 				printf("\nHelloWorld2!!\n"); 
 				printf("\nEnter the number : ");
@@ -147,39 +154,51 @@ int main(){
 				break;	
 			}
 			//-------------[3]-------------	 
-			case 3: //¿ùº°¸ÅÃâºñ±³ 
+			case 3:{ //ì›”ë³„ë§¤ì¶œë¹„êµ 
 				yellow();
 				time();
 				blue();
-				printf("\n\t\t****¿ùº°¸ÅÃâºñ±³****\n\n");
-				white();
-				printf("======================================================\n");
-				load();
-				printf("\nHelloWorld3!!\n\n"); 
-				//¿ùº°¸ÅÃâºÒ·¯¿À±â 
-				printf("======================================================\n");
-				printf("\nEnter the number : ");
-				scanf("%d", &check);				
-				break; 	
-			//-------------[4]-------------
-			case 4:{ //¿ùº°¼øÀÍºñ±³ 
-				yellow();
-				time();
-				blue();
-				printf("\n\t\t****¿ùº°¼öÀÍºñ±³****\n\n");
+				printf("\n\t\t****ì›”ë³„ë§¤ì¶œë¹„êµ****\n\n");
 				white();
 				printf("======================================================\n");
 				
-				FILE *fp4 = NULL;
-				fp4 = fopen("profit.txt", "r");
+				
+				FILE *fp5 = NULL;
+				fp5 = fopen("totalsales.txt", "r");
 				char buffer[100];
 				int count = 1;
 				
-				while(fgets(buffer, 100, fp4) != NULL){
+				while(fgets(buffer, 100, fp5) != NULL){
 					printf("%s", buffer);
 					count++;
-					} //¿ùº° ¼øÀÍ ºÒ·¯¿À±â 
-				fclose(fp4); 
+					} //ì›”ë³„ ë§¤ì¶œ ë¶ˆëŸ¬ì˜¤ê¸° 
+				fclose(fp5); 
+				
+				//ì›”ë³„ë§¤ì¶œë¶ˆëŸ¬ì˜¤ê¸° 
+				printf("======================================================\n");
+				printf("\nEnter the number : ");
+				scanf("%d", &check);				
+				break; 
+			}
+			//-------------[4]-------------
+			case 4:{ //ì›”ë³„ìˆœìµë¹„êµ 
+				yellow();
+				time();
+				blue();
+				printf("\n\t\t****ì›”ë³„ìˆ˜ìµë¹„êµ****\n\n");
+				white();
+				printf("======================================================\n");
+				
+				FILE *fp6 = NULL;
+				fp6 = fopen("profit.txt", "r");
+				char buffer[100];
+				int count = 1;
+				
+				while(fgets(buffer, 100, fp6) != NULL){
+					printf("%s", buffer);
+					count++;
+					} //ì›”ë³„ ìˆœìµ ë¶ˆëŸ¬ì˜¤ê¸° 
+				fclose(fp6); 
 				
 				printf("\n======================================================\n");
 				printf("\nEnter the number : ");
@@ -187,9 +206,9 @@ int main(){
 				break;
 			}
 			//-------------[5]-------------
-			case 5: //Á¾·á 
+			case 5: //ì¢…ë£Œ 
 				yellow();
-				printf("\n\n\t\tÁ¾·áÇÕ´Ï´Ù.\n\n");
+				printf("\n\n\t\tì¢…ë£Œí•©ë‹ˆë‹¤.\n\n");
 				white();
 				exit(0);
 				break;
